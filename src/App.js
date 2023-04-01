@@ -1,10 +1,10 @@
-import './App.css';
 import {useState} from "react";
-import {InputForm} from "./InputForm.tsx";
-import {PageContent} from "./PageContent.tsx";
+import {InputForm} from "./InputForm/InputForm.tsx";
+import {PageContent} from "./PageContent/PageContent.tsx";
 import {PageActions} from "./PageActions.tsx";
+import "./App.css";
 
-function App() {
+function App () {
 
     const [theme, setTheme] = useState("");
     const [poem, setPoem] = useState("");
@@ -12,12 +12,14 @@ function App() {
 
     return (
         <>
+            <div className="App">
             <Background >
                 <InputForm setTheme={setTheme} setPoem={setPoem} setImageURL={setImageURL}/>
                 <PageContent theme={theme} poem={poem} imageURL={imageURL}>
                     <PageActions />
                 </PageContent>
             </Background>
+                </div>
         </>
     );
 }

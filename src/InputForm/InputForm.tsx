@@ -1,4 +1,6 @@
 import {useState} from "react";
+import "./InputForm.css";
+import * as React from "react";
 
 export type InputFormProps = {
     setTheme:(string) => void;
@@ -19,8 +21,13 @@ export function InputForm({setTheme, setPoem, setImageURL}: InputFormProps) {
         setPrompt(event.target.value);
     }
 
-    return <form>
+    return <>
+    <div className={"headerMessage"}>
+        What poem would you like to read today?
+    </div>
+    <form className={"inputForm"}>
         <input type="text" placeholder="Type your prompt here..." onChange={handleChange} className={"inputPrompt"}/>
         <input type="submit" value="Generate" onClick={handleSubmit} className={"generateButton"}/>
     </form>
+    </>;
 }

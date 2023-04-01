@@ -1,0 +1,78 @@
+
+
+.poemContainer {
+    position: relative;
+    width: 30vw;
+    height: 30vh;
+    /*top: 30%;*/
+    left: 10%;
+
+    background: #D9D9D9;
+}
+
+.poemContainer .poemContent {
+    position: relative;
+    width: 25vw;
+    height: 25vh;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    line-height: 6px;
+
+    color: #000000;
+}
+
+.imageContainer {
+    position: relative;
+    width: 30vw;
+    height: 30vh;
+    /*top: 30%;*/
+    left: 60%;
+
+    background: #D9D9D9;
+}
+
+.imageContainer .imageContent{
+    position: absolute;
+    width: 15px;
+    height: 6px;
+    left: 130px;
+    top: 110px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 5px;
+    line-height: 6px;
+    /* identical to box height */
+
+
+    color: #000000;
+}
+
+.themeContainer {
+
+    position: relative;
+    width: 30vw;
+    height: 10vh;
+    top: 50%;
+    right: 10%;
+
+}
+
+.themeContainer .themeContent {
+    position: absolute;
+    width: 47px;
+    height: 10.67px;
+    left: 113px;
+    top: 192.78px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 5px;
+    line-height: 6px;
+
+    color: #000000;
+}
