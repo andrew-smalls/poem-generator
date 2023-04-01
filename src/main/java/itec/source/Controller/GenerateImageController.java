@@ -1,11 +1,11 @@
 package itec.source.Controller;
 
-import itec.source.Service.GenerateImageRequest;
-import itec.source.Service.GenerateImageResponse;
+import itec.source.api.imageGenerator.ImageRequest;
+import itec.source.api.imageGenerator.ImageResponse;
 import itec.source.Service.GenerateImageServiceImplementation;
-import org.springframework.beans.factory.annotation.Autowired;
+import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -13,17 +13,16 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/images")
 public class GenerateImageController {
-    @Autowired
     private final GenerateImageServiceImplementation imgService;
 
     public GenerateImageController(GenerateImageServiceImplementation imgService) {
         this.imgService = imgService;
     }
 
-    @GetMapping("/generate")
-    public ResponseEntity<GenerateImageResponse> generateImage(@RequestBody GenerateImageRequest request) {
-        final GenerateImageResponse response = imgService.generateImage(request);
-        return ResponseEntity.ok(response);
+    @PostMapping("generate")
+    public ResponseEntity<ImageResponse> generateImage(@Valid @RequestBody ImageRequest request) {
+        final var response = imgService.generateImage(request);
+        return ResponseEntity.ok(response.getBody());
     }
 
 }
