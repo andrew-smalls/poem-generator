@@ -1,54 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import {useState} from "react";
+import {InputForm} from "./InputForm/InputForm.tsx";
+import {PageContent} from "./PageContent/PageContent.tsx";
+import "./App.css";
 
-function App() {
-  return (
-      <>
-        <ChangingBackground>
-          <PageContent>
-          <InputForm/>
-          {basicReactApp()}
-          </PageContent>
-        </ChangingBackground>
-      </>
-  );
+function App () {
+
+    const [theme, setTheme] = useState("");
+    const [poem, setPoem] = useState("");
+    const [imageURL, setImageURL] = useState("");
+
+    return (
+
+        <div className="App">
+            <Background >
+                <div className={"containerGeneral"}>
+                <InputForm setTheme={setTheme} setPoem={setPoem} setImageURL={setImageURL}/>
+                <PageContent theme={theme} poem={poem} imageURL={imageURL}/>
+                </div>
+                </Background>
+        </div>
+    );
 }
 
-function ChangingBackground({children}) {
-  //logic to change background depending on input
-  return <>{children}</>;
-}
-
-function PageContent({children}) {
-  return <>{children}</>;
-}
-function InputForm() {
-  return <form>
-    <label>
-      Name:
-      <input type="text" name="name" />
-    </label>
-    <input type="submit" value="Submit" />
-  </form>
-}
-
-function basicReactApp() {
-  return <div className="App">
-    <header className="App-header">
-      <img src={logo} className="App-logo" alt="logo"/>
-      <p>
-        Edit <code>src/App.js</code> and save to reload.
-      </p>
-      <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-      >
-        Learn Reactsdfdas
-      </a>
-    </header>
-  </div>;
+export function Background({children}) {
+    //logic to change background depending on input
+    return <>{children}</>;
 }
 
 
