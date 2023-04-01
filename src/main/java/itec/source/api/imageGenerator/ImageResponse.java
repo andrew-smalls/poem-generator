@@ -14,4 +14,11 @@ public class ImageResponse {
         return data;
     }
 
+    public void setCreated(Long created) {
+        this.created = created;
+    }
+
+    public void setData(List<Data> data) {
+        this.data = data;
+    }
 }
