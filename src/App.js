@@ -1,7 +1,6 @@
 import {useState} from "react";
 import {InputForm} from "./InputForm/InputForm.tsx";
 import {PageContent} from "./PageContent/PageContent.tsx";
-import {PageActions} from "./PageActions.tsx";
 import "./App.css";
 
 function App () {
@@ -11,16 +10,15 @@ function App () {
     const [imageURL, setImageURL] = useState("");
 
     return (
-        <>
-            <div className="App">
+
+        <div className="App">
             <Background >
+                <div className={"containerGeneral"}>
                 <InputForm setTheme={setTheme} setPoem={setPoem} setImageURL={setImageURL}/>
-                <PageContent theme={theme} poem={poem} imageURL={imageURL}>
-                    <PageActions />
-                </PageContent>
-            </Background>
+                <PageContent theme={theme} poem={poem} imageURL={imageURL}/>
                 </div>
-        </>
+                </Background>
+        </div>
     );
 }
 

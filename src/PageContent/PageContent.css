@@ -1,78 +1,100 @@
+.parteaStanga{
+    padding-top: 38vh;
+    padding-left: 20vh;
+}
+.TOT {
+    display: flex;
+}
 
-
+.parteaDreapta {
+    display: flex;
+    padding-left:35vh;
+    padding-top: 38vh;
+}
+.poemHeaderText {
+    font-family: 'Inter', serif;
+    font-style: normal;
+    font-weight: 500;
+    color: #000000;
+    font-size: 30px;
+    padding-left: 7vh;
+}
 .poemContainer {
-    position: relative;
     width: 30vw;
-    height: 30vh;
-    /*top: 30%;*/
-    left: 10%;
-
     background: #D9D9D9;
+    height: 40vh;
 }
 
 .poemContainer .poemContent {
-    position: relative;
-    width: 25vw;
-    height: 25vh;
-
-    font-family: 'Inter';
+    font-family: 'Inter', serif;
     font-style: normal;
     font-weight: 400;
     line-height: 6px;
-
     color: #000000;
 }
 
+.readPoem {
+    padding-top: 42vh;
+    padding-left: 7vh;
+}
+.readPoemBtn {
+    width: 20vw;
+    height: 7vh;
+    background: #000000;
+    border-radius: 25px;
+    color: #D9D9D9;
+}
+
 .imageContainer {
-    position: relative;
     width: 30vw;
     height: 30vh;
-    /*top: 30%;*/
-    left: 60%;
-
     background: #D9D9D9;
 }
 
 .imageContainer .imageContent{
-    position: absolute;
     width: 15px;
     height: 6px;
-    left: 130px;
-    top: 110px;
-
-    font-family: 'Inter';
+    font-family: 'Inter', serif;
     font-style: normal;
     font-weight: 400;
     font-size: 5px;
     line-height: 6px;
-    /* identical to box height */
-
-
     color: #000000;
 }
 
 .themeContainer {
-
-    position: relative;
     width: 30vw;
     height: 10vh;
-    top: 50%;
-    right: 10%;
-
+    background: #D9D9D9;
 }
 
-.themeContainer .themeContent {
-    position: absolute;
-    width: 47px;
-    height: 10.67px;
-    left: 113px;
-    top: 192.78px;
-
-    font-family: 'Inter';
+.pTheme {
+    font-family: 'Inter', serif;
     font-style: normal;
-    font-weight: 400;
-    font-size: 5px;
-    line-height: 6px;
-
+    font-weight: 500;
     color: #000000;
+    font-size: 30px;
+    padding-left: 11vh;
 }
+
+.pImage {
+    font-family: 'Inter', serif;
+    font-style: normal;
+    font-weight: 500;
+    color: #000000;
+    font-size: 30px;
+    padding-left: 12vh;
+}
+
+/*.themeContainer .themeContent {*/
+/*    width: 47px;*/
+/*    height: 10.67px;*/
+/*    left: 113px;*/
+/*    top: 192.78px;*/
+/*    font-family: 'Inter', serif;*/
+/*    font-style: normal;*/
+/*    font-weight: 400;*/
+/*    font-size: 5px;*/
+/*    line-height: 6px;*/
+/*    color: #000000;*/
+/*}*/

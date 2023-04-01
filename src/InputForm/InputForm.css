@@ -1,56 +1,50 @@
-.headerMessage {
+.header {
     position: relative;
-    width: 60vw;
-    height: 10vh;
-    top: 5%;
-    right: 10%;
-    left: 10%;
+}
 
-    border: 5px;
+.form{
+    position: absolute;
+    top:50px;
+}
 
-    font-family: 'Inter';
+.headerMessage {
+    position: absolute;
+    font-family: 'Inter', serif;
     font-style: normal;
     font-weight: 400;
-    font-size: 40px;
-
     color: #000000;
+    padding-top: 5vh;
+    left: 40%;
+}
+.text {
+    vertical-align: top;
+    font-size: 30px;
+    margin: 0;
+    padding: 0;
+    text-align: center;
 }
 
 .inputForm {
-
-    position: relative;
-    width: 60vw;
-    height: 40vh;
-    top: 5%;
-    right: 10%;
-    left: 10%;
-
-    border: 5px;
+    padding-top: 10vh;
+    padding-left: 60vh;
 }
 
 .inputForm .inputPrompt {
-    position: relative;
-    width: 60vw;
-    height: 20vh;
-    top: 5%;
-    right: 10%;
-    left: 10%;
-
+    width: 45vw;
+    height: 10vh;
     background: #D9D9D9;
-
-    border: 5px;
+    border: none;
 }
 
 .inputForm .generateButton {
     position: relative;
-    width: 60vw;
-    height: 10vh;
-    top: 20%;
-    right: 10%;
-    left: 10%;
-
+    width: 20vw;
+    height: 7vh;
     background: #000000;
     border-radius: 25px;
-
     color: #D9D9D9;
+}
+
+.buton {
+    padding-left: 25vh;
 }
