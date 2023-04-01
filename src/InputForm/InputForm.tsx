@@ -14,24 +14,26 @@ export function InputForm({setTheme, setPoem, setImageURL}: InputFormProps) {
 
     async function handleSubmit(event) {
         event.preventDefault();
-        console.log("Entered: ", prompt);
         // send to server
         // on response, update content and update image
         // setPrompt
         // setTheme here
+        const payload = {
+            prompt: prompt.toString(),
+            n: 1,
+            size: "256x256"
+        };
 
-        const response = await fetch('/images/generate', {
+        const response = await fetch('http://localhost:4040/images/generate', {
             method: 'POST',
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(prompt),
-        }).then((data) => {
-            setReceivedData(data);
-        }) .catch((error) => {
-            console.log(error)
-        });
+            body: JSON.stringify(payload),
+        }).then(response => response.json())
+            .then(data => {
+                setReceivedData(data.data[0].url);
+            })
+            .catch((error) => {
+                console.log("Error: ", error);
+            });
     }
 
     useEffect(() => {

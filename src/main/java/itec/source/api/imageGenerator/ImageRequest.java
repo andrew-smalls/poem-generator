@@ -5,6 +5,9 @@ public class ImageRequest {
     private int n;
     private String size;
 
+    public ImageRequest() {
+    }
+
     public ImageRequest(String prompt, int n, String size){
         this.setPrompt(prompt);
         this.setN(n);
