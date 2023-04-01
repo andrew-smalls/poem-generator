@@ -1,8 +1,8 @@
-package source.Service;
+package itec.source.Service;
 
+import itec.source.Model.Poem;
 import org.springframework.stereotype.Service;
-import source.Model.Poem;
-import source.Repository.PoemRepository;
+import itec.source.Repository.PoemRepository;
 
 @Service
 public class PoemService {

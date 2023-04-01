@@ -1,4 +1,4 @@
-package source.Model;
+package itec.source.Model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
