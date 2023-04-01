@@ -1,4 +1,4 @@
-package itec.source.Service;
+package itec.source.api.imageGenerator;
 
 import feign.RequestInterceptor;
 import org.springframework.beans.factory.annotation.Value;
