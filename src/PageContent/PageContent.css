@@ -44,6 +44,13 @@
     background: #000000;
     border-radius: 25px;
     color: #D9D9D9;
+    cursor: pointer;
+    font-size: 30px;
+    border: none;
+}
+.readPoemBtn:hover {
+    background-color: palevioletred;
+    color: black;
 }
 
 .imageContainer {
@@ -103,6 +110,13 @@
     background: #000000;
     border-radius: 25px;
     color: #D9D9D9;
+    cursor: pointer;
+    font-size: 30px;
+    border: none;
+}
+.readThemeBtn:hover {
+    background-color: palevioletred;
+    color: black;
 }
 
 .readTheme {
