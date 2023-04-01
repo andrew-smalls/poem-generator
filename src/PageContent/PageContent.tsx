@@ -24,7 +24,22 @@ export function PageContent({poem, theme, imageURL}: PageContentProps) {
                         </div>
                     </div>
                 </div>
+
                 <div className={"parteaDreapta"}>
+                    <div className={"specialTheme"}>
+                        <div className={"pTheme"}>
+                            <p>This is a special poem theme :* </p>
+                        </div>
+                        <div className={"themeContainer"}>
+                            <div className={"themeContent"}>
+                                {theme}
+                            </div>
+
+                        </div>
+                        <div className={"readTheme"}>
+                            <button className={"readThemeBtn"}>Read theme</button>
+                        </div>
+                    </div>
                     <div>
                         <div className={"pImage"}>
                             <p>This is a special image :D</p>
@@ -34,17 +49,6 @@ export function PageContent({poem, theme, imageURL}: PageContentProps) {
                             {imageURL}
                         </div>
                     </div>
-                        <div>
-                            <div className={"pTheme"}>
-                                <p>This is a special poem theme :* </p>
-                            </div>
-                            <div className={"themeContainer"}>
-                                <div className={"themeContent"}>
-                                    {theme}
-                                </div>
-                                {/*<button>Read theme</button>*/}
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>

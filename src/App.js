@@ -10,7 +10,6 @@ function App () {
     const [imageURL, setImageURL] = useState("");
 
     return (
-
         <div className="App">
             <Background >
                 <div className={"containerGeneral"}>

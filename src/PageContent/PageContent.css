@@ -1,14 +1,15 @@
 .parteaStanga{
     padding-top: 38vh;
-    padding-left: 20vh;
+    padding-left: 6vh;
 }
 .TOT {
     display: flex;
 }
 
 .parteaDreapta {
+    gap: 6vh;
     display: flex;
-    padding-left:35vh;
+    padding-left:3.5vh;
     padding-top: 38vh;
 }
 .poemHeaderText {
@@ -47,7 +48,7 @@
 
 .imageContainer {
     width: 30vw;
-    height: 30vh;
+    height: 40vh;
     background: #D9D9D9;
 }
 
@@ -66,6 +67,11 @@
     width: 30vw;
     height: 10vh;
     background: #D9D9D9;
+    border-radius: 0% 0% 1000% 1000%;
+    margin: -20px -20px 0 0;
+    border: none;
+    position: relative;
+    overflow: hidden;
 }
 
 .pTheme {
@@ -75,6 +81,7 @@
     color: #000000;
     font-size: 30px;
     padding-left: 11vh;
+
 }
 
 .pImage {
@@ -86,15 +93,19 @@
     padding-left: 12vh;
 }
 
-/*.themeContainer .themeContent {*/
-/*    width: 47px;*/
-/*    height: 10.67px;*/
-/*    left: 113px;*/
-/*    top: 192.78px;*/
-/*    font-family: 'Inter', serif;*/
-/*    font-style: normal;*/
-/*    font-weight: 400;*/
-/*    font-size: 5px;*/
-/*    line-height: 6px;*/
-/*    color: #000000;*/
-/*}*/
+.specialTheme {
+    padding-top: 15vh;
+}
+
+.readThemeBtn {
+    width: 20vw;
+    height: 7vh;
+    background: #000000;
+    border-radius: 25px;
+    color: #D9D9D9;
+}
+
+.readTheme {
+    padding-top: 19.3vh;
+    padding-left: 9vh;
+}
