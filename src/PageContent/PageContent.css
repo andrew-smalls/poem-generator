@@ -31,16 +31,15 @@
     font-style: normal;
     font-weight: 400;
     color: #000000;
-    line-height: 3vh;
-    font-size: 24px;
+    line-height: 5vh;
+    font-size: 28px;
     white-space: pre-line;
-    text-align: left;
-    padding-left: 7vh;
+    text-align: center;
     padding-top: 2vh;
 }
 
 .readPoem {
-    padding-top: 30vh;
+    padding-top: 21vh;
     padding-left: 7vh;
 }
 .readPoemBtn {
