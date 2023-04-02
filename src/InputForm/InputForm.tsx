@@ -49,9 +49,12 @@ export function InputForm({setTheme, setPoem, setImageURL}: InputFormProps) {
             </div>
             <div className={"form"}>
                 <form className={"inputForm"}>
+                    <div className={"inputs"}>
                     <input type="text" placeholder="Type your prompt here..." onChange={handleChange}
                            className={"inputPrompt"}/>
-                    <br></br>
+                    <input type="text" placeholder="Number of words.." onChange={handleChange}
+                           className={"inputNumber"} />
+                    </div>
                     <br></br>
                     <div className={"buton"}>
                         <input type="submit" value="Generate" onClick={handleSubmit} className={"generateButton"}/>
