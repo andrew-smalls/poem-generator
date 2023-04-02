@@ -46,7 +46,7 @@ export function PageContent({poem, theme, imageURL}: PageContentProps) {
                         </div>
                     <div className={"imageContainer"}>
                         <div className={"imageContent"}>
-                            {imageURL}
+                            <img src={imageURL} alt="new" className={"actualImage"}/>
                         </div>
                     </div>
                     </div>

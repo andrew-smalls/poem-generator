@@ -10,38 +10,28 @@ export type InputFormProps = {
 
 export function InputForm({setTheme, setPoem, setImageURL}: InputFormProps) {
     const [prompt, setPrompt] = useState("");
-    const [receivedData, setReceivedData] = useState<any>(undefined);
+    const [numWords, setNumWords] = useState(50);
 
     async function handleSubmit(event) {
         event.preventDefault();
-        // send to server
-        // on response, update content and update image
-        // setPrompt
-        // setTheme here
-        const payload = {
-            prompt: prompt.toString(),
-            n: 1,
-            size: "256x256"
-        };
+        //await getImageURL(prompt, setImageURL);
+        //await getPoem(prompt, setPoem, numWords);
+        setPoem("That cute cat is always playing,\n" +
+            "Jumping, climbing, and frolicking so gay;\n" +
+            "She loves nibbling on her toys,\n" +
+            "Her independent spirit lights up the way.")
+        setImageURL("https://oaidalleapiprodscus.blob.core.windows.net/private/org-v7D9NinSpdHbGzbqEhlh5KRT/user-HZYu7OAiEzMzb6VZyqqTSkBm/img-YuekNjkF0icKOyf6MNpYJAbW.png?st=2023-04-01T22%3A49%3A21Z&se=2023-04-02T00%3A49%3A21Z&sp=r&sv=2021-08-06&sr=b&rscd=inline&rsct=image/png&skoid=6aaadede-4fb3-4698-a8f6-684d7786b067&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2023-04-01T10%3A09%3A17Z&ske=2023-04-02T10%3A09%3A17Z&sks=b&skv=2021-08-06&sig=iCISLElrAp4Bka4IxpwHNtsFkMzcNoqAX1lQY%2BIOy60%3D");
 
-        const response = await fetch('http://localhost:4040/images/generate', {
-            method: 'POST',
-            body: JSON.stringify(payload),
-        }).then(response => response.json())
-            .then(data => {
-                setReceivedData(data.data[0].url);
-            })
-            .catch((error) => {
-                console.log("Error: ", error);
-            });
+        //await getTheme(prompt, setTheme);
     }
 
-    useEffect(() => {
-        console.log("Received: ", receivedData);
-    }, [receivedData])
 
-    function handleChange(event) {
+    function handlePromptChange(event) {
         setPrompt(event.target.value);
+    }
+
+    function handleNumTokensChange(event) {
+        setNumWords(event.target.value);
     }
 
     return <>
@@ -51,7 +41,7 @@ export function InputForm({setTheme, setPoem, setImageURL}: InputFormProps) {
             </div>
             <div className={"form"}>
                 <form className={"inputForm"}>
-                    <input type="text" placeholder="Type your prompt here..." onChange={handleChange}
+                    <input type="text" placeholder="Type your prompt here..." onChange={handlePromptChange}
                            className={"inputPrompt"}/>
                     <br></br>
                     <br></br>
