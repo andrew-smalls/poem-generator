@@ -1,5 +1,6 @@
 import * as React from "react";
 import "./PageContent.css";
+import otterImage from '../main/resources/static/img.png';
 
 export type PageContentProps = {
     poem: string;
@@ -46,7 +47,7 @@ export function PageContent({poem, theme, imageURL}: PageContentProps) {
                         </div>
                     <div className={"imageContainer"}>
                         <div className={"imageContent"}>
-                            <img src={imageURL} alt="new" className={"actualImage"}/>
+                            <img src={imageURL === undefined ? otterImage : imageURL} alt="No prompt, no image :(" className={"actualImage"}/>
                         </div>
                     </div>
                     </div>

@@ -44,7 +44,7 @@ export function InputForm({setTheme, setPoem, setImageURL}: InputFormProps) {
                     <div className={"inputs"}>
                     <input type="text" placeholder="Type your prompt here..." onChange={handlePromptChange}
                            className={"inputPrompt"}/>
-                    <input type="text" placeholder="Number of words.." onChange={handleChange}
+                    <input type="text" placeholder="Number of words.." onChange={handleNumTokensChange}
                            className={"inputNumber"} />
                     </div>
                     <br></br>
