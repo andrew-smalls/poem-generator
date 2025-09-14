@@ -8,11 +8,11 @@
 		<version>3.0.5</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.example</groupId>
-	<artifactId>itec</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<name>itec</name>
-	<description>itec spring project</description>
+	<groupId>poem-generator</groupId>
+	<artifactId>poem-generator-backend</artifactId>
+	<version>0.1.0-SNAPSHOT</version>
+	<name>poem-generator</name>
+	<description>Poem Generator Backend</description>
 	<properties>
 		<java.version>17</java.version>
 	</properties>
@@ -32,7 +32,7 @@
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
-			<optional>true</optional>
+			<version>1.18.30</version>
 		</dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -80,14 +80,6 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<version>3.0.4</version>
-				<configuration>
-					<excludes>
-						<exclude>
-							<groupId>org.projectlombok</groupId>
-							<artifactId>lombok</artifactId>
-						</exclude>
-					</excludes>
-				</configuration>
 			</plugin>
 		</plugins>
 	</build>
