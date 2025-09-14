@@ -10,6 +10,7 @@ spring:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
         ddl-auto: validate
+        default_schema: poem-generator
     show-sql: true
 
   ai:
