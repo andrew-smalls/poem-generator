@@ -1,7 +1,8 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 /toIgnore
 
-/src/main/resources/application.properties
+/poem-generator-backend/src/main/resources/application.properties
+/poem-generator-backend/src/main/resources/application.yml
 # dependencies
 /node_modules
 /.pnp
@@ -26,7 +27,7 @@ yarn-error.log*
 =======
 HELP.md
 target/
-!.mvn/wrapper/maven-wrapper.jar
+!poem-generator-backend/.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
 

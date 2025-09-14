@@ -1,5 +1,6 @@
 package poemgenerator.mistral;
 
+import org.jetbrains.annotations.NotNull;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
@@ -35,22 +36,7 @@ public class ChatService {
     public String generatePoem(String theme) {
         validatePrompt(theme);
 
-        Map<String, String> systemMessage = Map.of(
-                "role", "system",
-                "content", "You are a creative poet. Generate poems of 8–12 verses maximum, concise and lyrical."
-        );
-
-        Map<String, String> userMessage = Map.of(
-                "role", "user",
-                "content", "Write me a poem about: " + theme
-        );
-
-        Map<String, Object> requestBody = Map.of(
-                "model", mistralProperties.getModel(),
-                "temperature", 0.9,
-                "max_tokens", 200,
-                "messages", List.of(systemMessage, userMessage)
-        );
+        Map<String, Object> requestBody = getRequestBody(theme);
 
         MistralResponse response = webClient.post()
                 .uri(COMPLETIONS_ENDPOINT)
@@ -71,6 +57,27 @@ public class ChatService {
             logger.error("Failed to save poem {} to repository: {}", e.getMessage(), poem);
         }
         return poem;
+    }
+
+    @NotNull
+    private Map<String, Object> getRequestBody(String theme) {
+        Map<String, String> systemMessage = Map.of(
+                "role", "system",
+                "content", "You are a creative poet. Generate poems of 8–12 verses maximum, concise and lyrical."
+        );
+
+        Map<String, String> userMessage = Map.of(
+                "role", "user",
+                "content", "Write me a poem about: " + theme
+        );
+
+        Map<String, Object> requestBody = Map.of(
+                "model", mistralProperties.getModel(),
+                "temperature", 0.9,
+                "max_tokens", 200,
+                "messages", List.of(systemMessage, userMessage)
+        );
+        return requestBody;
     }
 
     private void validatePrompt(String prompt) {
