@@ -6,10 +6,12 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
 import poemgenerator.config.MistralProperties;
+import poemgenerator.poem.model.Poem;
 import poemgenerator.poem.repository.PoemRepository;
 
 import java.util.List;
 import java.util.Map;
+import java.util.UUID;
 
 @Service
 public class ChatService {
@@ -33,7 +35,8 @@ public class ChatService {
                 .build();
     }
 
-    public String generatePoem(String theme) {
+    public Poem generatePoem(String theme, UUID userId) {
+        validateUserId(userId);
         validatePrompt(theme);
 
         Map<String, Object> requestBody = getRequestBody(theme);
@@ -49,14 +52,22 @@ public class ChatService {
             throw new RuntimeException("No response from Mistral API");
         }
 
-        String poem = response.getChoices().get(0).getMessage().getContent();
+        String poemContent = response.getChoices().get(0).getMessage().getContent();
+        Poem poem = new Poem(poemContent, theme, userId);
 
         try {
             poemRepository.save(poem);
         } catch (Exception e) {
-            logger.error("Failed to save poem {} to repository: {}", e.getMessage(), poem);
+            logger.error("Failed to save poem {} to repository: {}", e.getMessage(), poemContent);
         }
+
         return poem;
+    }
+
+    private void validateUserId(UUID userId) {
+        if (userId == null) {
+            throw new IllegalArgumentException("User ID cannot be null");
+        }
     }
 
     @NotNull
