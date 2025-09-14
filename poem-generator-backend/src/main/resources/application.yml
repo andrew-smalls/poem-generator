@@ -1,0 +1,6 @@
+spring:
+  ai:
+    mistral:
+      host: https://api.mistral.ai
+      api-key:
+      model: mistral-large-latest
