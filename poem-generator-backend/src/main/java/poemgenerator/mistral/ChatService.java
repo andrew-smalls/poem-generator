@@ -1,5 +1,6 @@
 package poemgenerator.mistral;
 
+import dev.langchain4j.agent.tool.P;
 import org.jetbrains.annotations.NotNull;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -7,6 +8,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.reactive.function.client.WebClient;
 import poemgenerator.config.MistralProperties;
+import poemgenerator.poem.PoemHistoryService;
 import poemgenerator.poem.model.Poem;
 import poemgenerator.poem.repository.PoemRepository;
 
@@ -19,14 +21,16 @@ public class ChatService {
     private final Logger logger = LoggerFactory.getLogger(ChatService.class);
     private final WebClient webClient;
     private final MistralProperties mistralProperties;
+    private final PoemHistoryService poemHistoryService;
 
     private final PoemRepository poemRepository;
 
     private final String COMPLETIONS_ENDPOINT = "/v1/chat/completions";
 
-    public ChatService(MistralProperties mistralProperties, PoemRepository poemRepository) {
+    public ChatService(MistralProperties mistralProperties, PoemRepository poemRepository, PoemHistoryService poemHistoryService) {
         this.mistralProperties = mistralProperties;
         this.poemRepository = poemRepository;
+        this.poemHistoryService = poemHistoryService;
 
         this.webClient = WebClient.builder()
                 .baseUrl(mistralProperties.getHost())
@@ -61,6 +65,12 @@ public class ChatService {
             poemRepository.save(poem);
         } catch (Exception e) {
             logger.error("Failed to save poem {} to repository: {}", e.getMessage(), poemContent);
+        }
+
+        try {
+            poemHistoryService.addPoem(poem.getContent());
+        } catch (Exception e) {
+            logger.error("Failed to save poem {} to Redis: {}", e.getMessage(), poemContent);
         }
 
         return poem;

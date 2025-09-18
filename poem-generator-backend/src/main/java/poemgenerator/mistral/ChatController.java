@@ -2,6 +2,7 @@ package poemgenerator.mistral;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import poemgenerator.poem.PoemHistoryService;
 import poemgenerator.poem.model.Poem;
 import poemgenerator.poem.repository.PoemRepository;
 
@@ -16,10 +17,12 @@ public class ChatController {
 
     private final ChatService chatService;
     private final PoemRepository poemRepository;
+    private final PoemHistoryService poemHistoryService;
 
-    public ChatController(ChatService chatService, PoemRepository poemRepository) {
+    public ChatController(ChatService chatService, PoemRepository poemRepository, PoemHistoryService poemHistoryService) {
         this.chatService = chatService;
         this.poemRepository = poemRepository;
+        this.poemHistoryService = poemHistoryService;
     }
 
     @PostMapping("/poem")
@@ -46,4 +49,8 @@ public class ChatController {
         return poemRepository.findAll();
     }
 
+    @GetMapping("/poems/recent")
+    public List<String> getRecentPoems() {
+        return poemHistoryService.getRecentPoems();
+    }
 }

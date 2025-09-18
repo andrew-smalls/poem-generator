@@ -13,6 +13,12 @@ spring:
         default_schema: poem-generator
     show-sql: true
 
+  data:
+    redis:
+      host: 127.0.0.1
+      port: 6379
+      database: 0
+
   ai:
     mistral:
       host: https://api.mistral.ai
