@@ -1,4 +1,3 @@
 @echo off
 echo Opening IntelliJ IDEA...
 start "" "B:\Software\IntelliJ IDEA 2023.2.5\bin\idea64.exe" "C:\Users\andre\IdeaProjects\itec2023\poem-generator-backend\src\main\java\poemgenerator\PoemGeneratorApplication.java"
-pause

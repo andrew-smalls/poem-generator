@@ -1,4 +1,8 @@
 @echo off
+
+echo Changing directory to project root...
+cd /d "C:\Users\andre\IdeaProjects\itec2023\poem-generator-backend\fast-start\"
+
 echo === Starting Development Environment ===
 
 :: Start Postgres service

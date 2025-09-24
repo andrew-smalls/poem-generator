@@ -25,4 +25,3 @@ if %ERRORLEVEL% EQU 0 (
     echo Container not found, creating it...
     docker compose up -d
 )
-pause
