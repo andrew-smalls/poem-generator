@@ -1,5 +1,7 @@
 export default function CountryPicker() {
     return (
-        <div>Country Picker</div>
+        <div className="header-component">
+            <div>Country Picker</div>
+        </div>
     );
 }

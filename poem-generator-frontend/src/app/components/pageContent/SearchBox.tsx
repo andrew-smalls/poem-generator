@@ -1,5 +1,7 @@
 export default function SearchBox() {
     return (
-        <div>Search Box</div>
+        <div className="search-box">
+            <input type="search" minLength={3} autoFocus={true} placeholder="Search by theme?"></input>
+        </div>
     );
 }

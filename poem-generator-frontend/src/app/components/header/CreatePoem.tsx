@@ -1,5 +1,9 @@
 export default function CreatePoem() {
     return (
-        <div>Create Poem</div>
+        <div className="header-component">
+            <button type="submit">
+                Create Poem
+            </button>
+        </div>
     );
 }
