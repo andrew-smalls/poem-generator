@@ -1,0 +1,5 @@
+.search-box {
+    .input {
+        border-color: var(--nav-button-background);
+    }
+}
