@@ -3,3 +3,7 @@
         border-color: var(--nav-button-background);
     }
 }
+
+.poemList {
+    width: 80%;
+}
